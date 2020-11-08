@@ -1,9 +1,12 @@
 <template>
   <v-app>
-    <Menu />
+    <v-app-bar app>
+      <Menu />
+    </v-app-bar>
 
-    <v-main>
-        <router-view></router-view>
+    <v-main class="def-padding">
+      
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
@@ -21,5 +24,14 @@ export default {
   data: () => ({
     //
   }),
+
+  mounted(){
+  }
 };
 </script>
+
+<style scoped>
+  .def-padding{
+    padding: 70px 16px !important;
+  }
+</style>

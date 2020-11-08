@@ -1,21 +1,19 @@
 <template>
-  <v-navigation-drawer
-    app
-    clipped
-    permanent
-  >
-    <v-list
-      nav
-      dense
-    >
-      <v-list-item v-for="(item, i) in items" :key="i" :to="item.link" link>
-        <v-list-item-icon>
+  <v-app-bar app>
+      <v-btn-toggle
+          v-model="toggle_exclusive"
+          multiple
+      >
+        <v-btn v-for="(item, i) in items" :key="i" :to="item.link" link>
           <v-icon>{{item.icon}}</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title>{{item.text}}</v-list-item-title>
-      </v-list-item>
-    </v-list>
-  </v-navigation-drawer>
+          {{item.text}}
+        </v-btn>
+      </v-btn-toggle>
+
+      <v-spacer></v-spacer>
+
+      <v-toolbar-title>{{getTitle}}</v-toolbar-title>
+  </v-app-bar>
 </template>
 
 <script>
@@ -41,5 +39,12 @@ export default {
       },
     ],
   }),
+
+  computed: {
+    getTitle: function() {
+      return this.$store.getters.getTitle;
+    }
+  }
+
 };
 </script>

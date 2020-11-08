@@ -15,5 +15,9 @@ export default {
   data: () => ({
     //
   }),
+
+  mounted(){
+    this.$store.dispatch('setPage', 'Test');
+  }
 };
 </script>

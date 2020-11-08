@@ -1,13 +1,13 @@
 <template>
     <p>
-        Test1
+        Home
     </p>
 </template>
 
 <script>
 
 export default {
-  name: 'Test1',
+  name: 'Home',
 
   components: {
   },
@@ -17,7 +17,7 @@ export default {
   }),
 
   mounted(){
-    this.$store.dispatch('setPage', 'Test1');
+    this.$store.dispatch('setPage', 'Vuetify Application');
   }
 };
 </script>
