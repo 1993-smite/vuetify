@@ -37,6 +37,11 @@ export default {
         text: 'Test1',
         link: '/test1',
       },
+      {
+        icon: '',
+        text: 'Holidays',
+        link: '/holidays',
+      },
     ],
   }),
 
