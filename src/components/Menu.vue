@@ -1,7 +1,6 @@
 <template>
   <v-app-bar app>
       <v-btn-toggle
-          v-model="toggle_exclusive"
           multiple
       >
         <v-btn v-for="(item, i) in items" :key="i" :to="item.link" link>
