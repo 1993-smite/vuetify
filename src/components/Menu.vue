@@ -1,13 +1,11 @@
 <template>
   <v-app-bar app>
-      <v-btn-toggle
-          multiple
-      >
-        <v-btn v-for="(item, i) in items" :key="i" :to="item.link" link>
-          <v-icon>{{item.icon}}</v-icon>
-          {{item.text}}
-        </v-btn>
-      </v-btn-toggle>
+      
+      <MenuItem 
+        v-for="(item, i) in items"
+        v-bind:key="i"
+        v-bind:item="item"
+        />
 
       <v-spacer></v-spacer>
 
@@ -16,37 +14,47 @@
 </template>
 
 <script>
+import MenuItem from './MenuItem'
+
+function btn(text, link){
+  return {
+    icon: '',
+    text: text,
+    link: link,
+    btns: []
+  }
+}
+
 export default {
   name: 'Menu',
 
+  components: {
+    MenuItem
+  },
+
   data: () => ({
     items: [
+      btn('Home', '/'),
+      btn('Test', '/test'),
       {
-        icon: '',
-        text: 'Home',
-        link: '/',
+        text: "Тесты по элементам",
+        btns: [
+          btn('Диалог выбора', '/test1')
+        ]
       },
-      {
-        icon: '',
-        text: 'Test',
-        link: '/test',
-      },
-      {
-        icon: '',
-        text: 'Test1',
-        link: '/test1',
-      },
-      {
-        icon: '',
-        text: 'Holidays',
-        link: '/holidays',
-      },
+      btn('Holidays', '/holidays'),
     ],
   }),
 
   computed: {
     getTitle: function() {
       return this.$store.getters.getTitle;
+    }
+  },
+
+  methods: {
+    checkExistSubElements: function(item){
+      return item.btns.lenght > 0
     }
   }
 

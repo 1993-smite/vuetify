@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card
-      class="d-flex flex-row"
+      class="d-flex flex-row mb-6 justify-center"
       :color="$vuetify.theme.dark ? 'grey darken-3' : 'grey lighten-4'"
       flat
       tile

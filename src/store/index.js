@@ -8,11 +8,13 @@ Vue.use(Vuex)
  */
 import page from './modules/page'
 import holidays from './modules/holidays'
+import test from './modules/test'
 
 export default 
 new Vuex.Store({
     modules: {
         page,
-        holidays
+        holidays,
+        test
     }
 });
