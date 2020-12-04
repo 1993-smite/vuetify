@@ -35,7 +35,7 @@ export default {
   }),
 
   mounted(){
-    this.$store.dispatch('setPage', 'Test1');
+    
   }
 };
 </script>

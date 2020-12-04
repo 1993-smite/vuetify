@@ -39,7 +39,7 @@ export default {
       {
         text: "Тесты по элементам",
         btns: [
-          btn('Диалог выбора', '/test1')
+          btn('Таб', '/test1')
         ]
       },
       btn('Holidays', '/holidays'),
