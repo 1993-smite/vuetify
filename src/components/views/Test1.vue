@@ -16,6 +16,11 @@
         >
           Таблица
         </v-tab>
+        <v-tab
+          ripple
+        >
+          Дата тайм пикер
+        </v-tab>
 
     </v-tabs>
 
@@ -40,6 +45,16 @@
           </v-row>
         </v-card>
       </v-tab-item>
+
+      <v-tab-item>
+        <v-card flat>
+          <v-spacer></v-spacer>
+          <v-row justify="center">
+            <DTPicker></DTPicker>
+          </v-row>
+        </v-card>
+      </v-tab-item>
+
     </v-tabs-items>
   </div>
 
@@ -49,13 +64,15 @@
 
   import dUser from './tests/dUser'
   import Table from './tests/Table'
+  import DTPicker from './tests/DTPicker'
 
 export default {
   name: 'Test1',
 
   components: {
     dUser,
-    Table
+    Table,
+    DTPicker
   },
 
   computed: {
