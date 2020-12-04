@@ -23,7 +23,7 @@
             column
           >
             <v-radio
-                v-for="(user, index) in users"
+                v-for="(user, index) in getUsers"
                 v-bind:key="index"
                 v-bind:label="user.Name"
                 v-bind:value="user.Id"
@@ -60,6 +60,9 @@ export default {
         getUserName: function(){
           return this.getTestUser?.Name || "Выбрать";
         },
+        getUsers: function(){
+          return this.$store.getters.getTestUsers;
+        } 
     },
 
     components: {
@@ -67,7 +70,7 @@ export default {
 
     watch: {
         userId: function(value){
-            let usr = this.users.find(x=>x.Id == value);
+            let usr = this.getUsers.find(x=>x.Id == value);
             this.$store.dispatch('setTestUser', usr);
         }
     },
@@ -81,48 +84,6 @@ export default {
                     //
             dialog: false,
             userId: initUserId,
-            users : [
-                {
-                    Id: 1,
-                    Name: "Ленин Владимир Ильич"
-                },
-                {
-                    Id: 2,
-                    Name: "Сталин Йосиф Вессарионович"
-                },
-                {
-                    Id: 3,
-                    Name: "Петр I"
-                },
-                {
-                    Id: 4,
-                    Name: "Александр I"
-                },
-                {
-                    Id: 5,
-                    Name: "Николай I"
-                },
-                {
-                    Id: 6,
-                    Name: "Невский Александр"
-                },
-                {
-                    Id: 7,
-                    Name: "Донской Дмитрий"
-                },
-                {
-                    Id: 8,
-                    Name: "Чингиз Хан"
-                },
-                {
-                    Id: 9,
-                    Name: "Наполеон"
-                },
-                {
-                    Id: 10,
-                    Name: "Цезарь"
-                }
-            ]
         };
     },
 
